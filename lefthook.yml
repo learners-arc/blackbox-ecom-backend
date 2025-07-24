@@ -1,0 +1,36 @@
+# lefthook.yml
+
+pre-commit:
+  parallel: true
+  commands:
+    lint-backend:
+      run: cd backend && pnpm eslint src/**/*.ts && pnpm prettier --write src/**/*.ts
+    # lint-frontend:
+    #   run: cd frontend && pnpm eslint src/**/*.ts && pnpm prettier --write src/**/*.ts
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit $1
+
+pre-push:
+  parallel: true
+  commands:
+    test-backend:
+      run: cd backend && pnpm vitest run
+    # test-frontend:
+    #   run: cd frontend && pnpm vitest run
+
+post-merge:
+  commands:
+    install-backend:
+      run: cd backend && pnpm install
+    # install-frontend:
+    #   run: cd frontend && pnpm install
+
+post-rewrite:
+  commands:
+    install-backend:
+      run: cd backend && pnpm install
+    # install-frontend:
+    #   run: cd frontend && pnpm install

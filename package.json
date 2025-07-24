@@ -1,0 +1,29 @@
+{
+  "name": "blackbox-commerce",
+  "version": "1.0.0",
+  "description": "Production-ready e-commerce: BlackBox Commerce",
+  "scripts": {
+    "lint:frontend": "cd frontend && eslint src/**/*.ts",
+    "lint:backend": "cd backend && eslint src/**/*.ts",
+    "format:frontend": "cd frontend && prettier --write src/**/*.ts",
+    "format:backend": "cd backend && prettier --write src/**/*.ts",
+    "test:frontend": "cd frontend && vitest run",
+    "test:backend": "cd backend && vitest run"
+  },
+  "keywords": [
+    "ecommerce",
+    "nodejs",
+    "express",
+    "mongodb",
+    "typescript"
+  ],
+  "author": "learnershakil",
+  "license": "MIT",
+  "devDependencies": {
+    "lefthook": "^1.12.2",
+    "lint-staged": "^16.1.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
+  }
+}
