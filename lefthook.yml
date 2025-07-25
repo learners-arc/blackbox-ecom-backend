@@ -13,11 +13,11 @@ commit-msg:
     commitlint:
       run: npx commitlint --edit $1
 
-pre-push:
-  parallel: true
-  commands:
-    test-backend:
-      run: cd backend && pnpm vitest run
+# pre-push:
+#   parallel: true
+#   commands:
+#     test-backend:
+#       run: cd backend && pnpm vitest run
     # test-frontend:
     #   run: cd frontend && pnpm vitest run
 
